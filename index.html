@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Бухгалтерия | Услуги для бизнеса</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Подключаем внешний CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Модальное окно для звонка -->
+    <div id="callModal" class="modal">
+        <div class="modal-content">
+            <i class="fas fa-phone-alt modal-icon"></i>
+            <h3>Позвонить Маге?</h3>
+            <p>Будем рады помочь с бухгалтерией!</p>
+            <div class="modal-buttons">
+                <button id="modalYes" class="modal-btn yes-btn">Да, позвонить</button>
+                <button id="modalNo" class="modal-btn no-btn">Отмена</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Шапка / Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">Бухгалтерия</div>
+            <nav class="nav">
+                <a href="#home" class="nav-link">Главная</a>
+                <a href="#services" class="nav-link">Услуги</a>
+                <a href="#about" class="nav-link">Обо мне</a>
+                <a href="#contacts" class="nav-link">Контакты</a>
+            </nav>
+            <button id="themeToggle" class="theme-toggle" aria-label="Сменить тему">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero секция -->
+        <section id="home" class="hero">
+            <!-- Плавающие фоновые элементы (цифры/листы) -->
+            <div class="floating-bg">
+                <div class="float-item">📄</div>
+                <div class="float-item">📊</div>
+                <div class="float-item">💰</div>
+                <div class="float-item">🧾</div>
+                <div class="float-item">123</div>
+                <div class="float-item">₽</div>
+                <div class="float-item">📈</div>
+            </div>
+            <div class="container hero-content">
+                <h1 class="hero-title fade-up">Бухгалтерские услуги для бизнеса</h1>
+                <p class="hero-subtitle fade-up delay-1">Снижаем налоги, наводим порядок в отчётности. Работаю с ИП и ООО.</p>
+                <button id="heroCallBtn" class="btn btn-primary pulse-btn">Связаться с Магой <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Услуги / Services -->
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-title fade-up">Что я предлагаю</h2>
+                <div class="services-grid">
+                    <div class="service-card card-animate" data-delay="0">
+                        <div class="card-icon"><i class="fas fa-calculator"></i></div>
+                        <h3>Ведение учёта</h3>
+                        <p>Полное бухгалтерское сопровождение, первичка, закрытие периодов.</p>
+                    </div>
+                    <div class="service-card card-animate" data-delay="0.1">
+                        <div class="card-icon"><i class="fas fa-file-invoice"></i></div>
+                        <h3>Налоговые декларации</h3>
+                        <p>Расчёт налогов, заполнение и сдача отчётности без ошибок.</p>
+                    </div>
+                    <div class="service-card card-animate" data-delay="0.2">
+                        <div class="card-icon"><i class="fas fa-headset"></i></div>
+                        <h3>Консультации 24/7</h3>
+                        <p>Оперативные ответы на вопросы, поддержка в любой ситуации.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Обо мне / About -->
+        <section id="about" class="about">
+            <div class="container about-container">
+                <div class="about-content">
+                    <h2 class="section-title fade-up">О бухгалтере</h2>
+                    <div class="about-text-wrapper">
+                        <p id="typewriterText" class="about-text typewriter-placeholder"></p>
+                    </div>
+                    <div class="experience-counter">
+                        <span class="exp-label">Стаж работы:</span>
+                        <span class="exp-number"><span id="yearsCount">0</span> лет</span>
+                    </div>
+                </div>
+                <div class="about-stats fade-up">
+                    <div class="stat-badge"><i class="fas fa-check-circle"></i> Более 50 клиентов</div>
+                    <div class="stat-badge"><i class="fas fa-shield-alt"></i> Без штрафов</div>
+                    <div class="stat-badge"><i class="fas fa-chart-line"></i> Оптимизация налогов</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Контакты и Карта (условная) -->
+        <section id="contacts" class="contacts">
+            <div class="container">
+                <h2 class="section-title fade-up">Контакты</h2>
+                <div class="contacts-wrapper">
+                    <div class="contact-info fade-up">
+                        <div class="contact-item phone-item">
+                            <i class="fas fa-phone-alt shaking-phone"></i>
+                            <div class="contact-details">
+                                <span id="phoneNumber" class="phone-number">+7 983 467-14-88</span>
+                                <button id="copyPhoneBtn" class="copy-btn"><i class="fas fa-copy"></i> Скопировать</button>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-user"></i>
+                            <span>Мага — ваш надёжный бухгалтер</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="funny-address">📍 ул. Пушкина, дом Колотушкина, 67</span>
+                        </div>
+                    </div>
+                    <!-- Условная карта (стилизованный блок) -->
+                    <div class="map-card fade-up delay-2">
+                        <div class="map-placeholder">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <p>Карта: Пушкина, 67 — заходите на чай с отчётами ☕</p>
+                            <div class="mini-marker"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>© 2025, Бухгалтерия. Забота о ваших цифрах.</p>
+            <div class="footer-love">💼 Честный учёт — спокойный сон</div>
+        </div>
+    </footer>
+
+    <!-- Скрипты (анимации, тема, счетчик, печатная машинка, модальное окно) -->
+    <script>
+        // ---------- ТЕМНАЯ/СВЕТЛАЯ ТЕМА ----------
+        const themeToggle = document.getElementById('themeToggle');
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark-theme');
+            themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        } else {
+            themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            if (document.body.classList.contains('dark-theme')) {
+                localStorage.setItem('theme', 'dark');
+                themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+            }
+            // анимация вращения
+            themeToggle.style.transform = 'rotate(360deg)';
+            setTimeout(() => { themeToggle.style.transform = ''; }, 300);
+        });
+
+        // ---------- МОДАЛЬНОЕ ОКНО ДЛЯ ЗВОНКА ----------
+        const modal = document.getElementById('callModal');
+        const modalYes = document.getElementById('modalYes');
+        const modalNo = document.getElementById('modalNo');
+        let pendingTel = '+79834671488'; // чистый номер
+
+        function openModal() {
+            modal.style.display = 'flex';
+            modal.style.animation = 'fadeInModal 0.2s ease';
+        }
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+        modalYes.addEventListener('click', () => {
+            window.location.href = `tel:${pendingTel}`;
+            closeModal();
+        });
+        modalNo.addEventListener('click', closeModal);
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        // Функция для вызова модалки (и для кнопки героя, и для номера телефона)
+        function triggerCallModal() {
+            openModal();
+        }
+
+        // Кнопка Hero "Связаться с Магой"
+        const heroBtn = document.getElementById('heroCallBtn');
+        if (heroBtn) heroBtn.addEventListener('click', triggerCallModal);
+
+        // Клик по номеру телефона (в контактах)
+        const phoneNumberSpan = document.getElementById('phoneNumber');
+        if (phoneNumberSpan) {
+            phoneNumberSpan.style.cursor = 'pointer';
+            phoneNumberSpan.addEventListener('click', triggerCallModal);
+        }
+
+        // ---------- КОПИРОВАНИЕ ТЕЛЕФОНА С УВЕДОМЛЕНИЕМ ----------
+        const copyBtn = document.getElementById('copyPhoneBtn');
+        const phoneRaw = '+7 983 467-14-88';
+        copyBtn.addEventListener('click', async () => {
+            try {
+                await navigator.clipboard.writeText(phoneRaw);
+                showToast('Скопировано! 📋');
+            } catch (err) {
+                showToast('Не удалось скопировать', true);
+            }
+        });
+
+        function showToast(msg, isError = false) {
+            let toast = document.createElement('div');
+            toast.className = 'toast-notification';
+            toast.innerText = msg;
+            if (isError) toast.style.backgroundColor = '#d9534f';
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 10);
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 2500);
+        }
+
+        // ---------- АНИМАЦИЯ ПРИ СКРОЛЛЕ (Intersection Observer) ----------
+        const fadeElements = document.querySelectorAll('.fade-up, .service-card, .contact-item, .map-card, .about-stats, .section-title');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2, rootMargin: "0px 0px -20px 0px" });
+        fadeElements.forEach(el => observer.observe(el));
+
+        // для карточек с задержкой
+        document.querySelectorAll('.card-animate').forEach(card => {
+            observer.observe(card);
+        });
+
+        // ---------- СЧЁТЧИК ЛЕТ ОПЫТА (0 → 10) ПРИ ПОЯВЛЕНИИ СЕКЦИИ ABOUT ----------
+        const aboutSection = document.getElementById('about');
+        const yearsSpan = document.getElementById('yearsCount');
+        let counted = false;
+        function startCounter() {
+            if (counted) return;
+            counted = true;
+            let start = 0;
+            const end = 10;
+            const duration = 1500;
+            const stepTime = 20;
+            const steps = duration / stepTime;
+            const increment = end / steps;
+            let current = start;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= end) {
+                    yearsSpan.innerText = end;
+                    clearInterval(timer);
+                } else {
+                    yearsSpan.innerText = Math.floor(current);
+                }
+            }, stepTime);
+        }
+
+        // ---------- ПЕЧАТНАЯ МАШИНКА ДЛЯ ТЕКСТА О БУХГАЛТЕРЕ ----------
+        const fullAboutText = "Мага — опытный бухгалтер с 10-летним стажем. Помогу закрыть отчётность без штрафов, оптимизирую налоги и настрою учёт под ваш бизнес.";
+        const typewriterElement = document.getElementById('typewriterText');
+        let typed = false;
+        function startTypewriter() {
+            if (typed) return;
+            typed = true;
+            let i = 0;
+            typewriterElement.innerHTML = '';
+            typewriterElement.classList.add('typing-cursor');
+            function typing() {
+                if (i < fullAboutText.length) {
+                    typewriterElement.innerHTML += fullAboutText.charAt(i);
+                    i++;
+                    setTimeout(typing, 45);
+                } else {
+                    typewriterElement.classList.remove('typing-cursor');
+                }
+            }
+            typing();
+        }
+
+        // Наблюдатель за секцией about: запускаем счетчик и печатную машинку при первом появлении
+        const aboutObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    startCounter();
+                    startTypewriter();
+                    aboutObserver.unobserve(aboutSection);
+                }
+            });
+        }, { threshold: 0.4 });
+        aboutObserver.observe(aboutSection);
+
+        // Дополнительная анимация для карточек: при скролле они получают класс visible (индивидуальные задержки CSS)
+        const serviceCards = document.querySelectorAll('.service-card');
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, idx) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, idx * 100);
+                    cardObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        serviceCards.forEach(card => cardObserver.observe(card));
+
+        // Плавный скролл для якорей
+        document.querySelectorAll('.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElem = document.getElementById(targetId);
+                if (targetElem) {
+                    targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Анимация при загрузке (fade-in + slide-up для hero)
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.hero-title, .hero-subtitle, .btn-primary').forEach(el => {
+                el.classList.add('visible');
+            });
+        });
+    </script>
+</body>
+</html>
